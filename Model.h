@@ -1,3 +1,9 @@
+#ifndef MODEL_H
+#define MODEL_H
+#define MAX_TASKS 20
+#define CAN_NOT 0
+#define SUCCESS 1
+#define UNEXPEC_ERROR -1
 struct Task
 {
     char Desc[101];
@@ -5,9 +11,9 @@ struct Task
     char Title[51];
     enum St{Done,To_do} (Status);
 };
-struct Task MyTask[20];
+struct Task MyTask[MAX_TASKS];
 
-void RegisterTask();
+int RegisterTask(char Title[], char Desc[]);
 
 void ListTask();
 
@@ -18,3 +24,5 @@ int SearchTask();
 void DeleteTask(int Id);
 
 int CloseManager();
+
+#endif
