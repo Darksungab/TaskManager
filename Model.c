@@ -23,7 +23,8 @@ int HasSpace(){
 }
 
 int RegisterTask(char Title[], char Desc[]){
-     if (HasSpace() == SUCCESS)
+     int Space = HasSpace();
+     if (Space == SUCCESS)
      {
           MyTask[RecordedTasks].Id = NextId++;
           strcpy(MyTask[RecordedTasks].Title, Title);
@@ -31,7 +32,7 @@ int RegisterTask(char Title[], char Desc[]){
 
           return SUCCESS;
      }
-     if (HasSpace() == CAN_NOT)
+     if (Space == CAN_NOT)
      {
           return CAN_NOT;
      }
