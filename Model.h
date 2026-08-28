@@ -4,6 +4,7 @@
 #define CAN_NOT 0
 #define SUCCESS 1
 #define UNEXPEC_ERROR -1
+#define NOT_FOUND -1
 struct Task
 {
     char Desc[101];
@@ -17,9 +18,15 @@ int RegisterTask(char Title[], char Desc[]);
 
 struct Task* ListTask();
 
-void TaskStatus();
+int TaskStatus(int Id);
 
-int SearchTask();
+int TaskIndex(int Id);
+
+int TaskExists(int Id);
+
+int ChangeTaskStatus(int Id, enum St NewStatus);
+
+void SearchTask(int Id, char Desc[101], char Title[51]);
 
 void DeleteTask(int Id);
 
