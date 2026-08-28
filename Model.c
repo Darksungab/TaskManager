@@ -43,6 +43,97 @@ int RegisterTask(char Title[], char Desc[]){
      
 
 }
-int main(){
-     return 0;
+
+struct Task* ListTask(){
+     if (RecordedTasks != 0)
+     {
+          return MyTask;             
+     }
+     else
+     {
+          return NULL;
+     }     
+}
+
+int TaskIndex (int Id){
+     int i;
+     for (i = 0; i < RecordedTasks;){
+               if (MyTask[i].Id == Id){
+                    return i;
+               }
+               else{
+                    i++;
+               }                    
+          }
+     return NOT_FOUND;
+}
+
+int TaskExists(int Id){
+     int Index = TaskIndex(Id);
+     if (RecordedTasks == 0){
+          return CAN_NOT;
+     }
+     if (RecordedTasks != 0) {
+          if (Index == NOT_FOUND)
+          {
+               return NOT_FOUND;
+          }
+          else{
+               return SUCCESS;
+          }           
+     }
+     else {
+          return NOT_FOUND;
+     }
+}
+
+int ChangeTaskStatus(int Id, enum St NewStatus){
+     int Index = TaskIndex(Id);
+     if (Index== NOT_FOUND)
+     {
+          return NOT_FOUND;
+     }
+     MyTask[Index].Status = NewStatus;
+     return SUCCESS;
+}
+
+int TaskStatus(int Id){
+     int Index = TaskIndex(Id);
+     if (Index == NOT_FOUND){
+          return NOT_FOUND;
+     }
+     else {
+          return MyTask[Index].Status;
+     }
+     
+}
+
+struct Task* SearchById(int Id){
+    int ID = Id;
+    int Index = TaskIndex(Id);
+
+    if (Index == NOT_FOUND){
+     return NULL;
+    }
+    else{
+     return &MyTask[Index];
+    }
+}
+
+struct Task* SearchByDesc(char Desc[101]){
+     int i;
+     int text;
+     for (i = 0; i < RecordedTasks; i++)
+     {
+          text = strcmp(Desc, MyTask[i].Desc);
+          if (text ==  0)
+          {
+               return &MyTask[i];
+          }         
+     }
+     return NULL;
+}
+void SearchTask(int Id, char Desc[101], char Title[51]){
+     
+
 }
