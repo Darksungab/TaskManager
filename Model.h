@@ -9,13 +9,13 @@ struct Task
     char Desc[101];
     int Id;
     char Title[51];
-    enum St{Done,To_do} (Status);
+    enum St{Done,To_do, Doing} (Status);
 };
 extern struct Task MyTask[MAX_TASKS];
 
 int RegisterTask(char Title[], char Desc[]);
 
-void ListTask();
+struct Task* ListTask();
 
 void TaskStatus();
 
