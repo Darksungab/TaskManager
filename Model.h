@@ -11,7 +11,7 @@ struct Task
     char Title[51];
     enum St{Done,To_do} (Status);
 };
-struct Task MyTask[MAX_TASKS];
+extern struct Task MyTask[MAX_TASKS];
 
 int RegisterTask(char Title[], char Desc[]);
 
