@@ -174,5 +174,5 @@ void DeleteTask(int Id){
      {
           MyTask[i] = MyTask[i+1];
      }
-     RecordedTasks--;
+     RecordedTasks--; 
 }
