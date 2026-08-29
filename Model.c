@@ -135,5 +135,29 @@ struct Task* SearchByDesc(char Desc[101]){
 }
 void SearchTask(int Id, char Desc[101], char Title[51]){
      
+switch (Select)
+     {
+     case 1:
+          return SearchById(Id);
+     case 2:
+          struct Task* ByDesc = SearchByDesc(Desc);
+          if (ByDesc == NULL){
+               return SearchByTitle(Title);
+          }
+          else{
+               return ByDesc;
+          }
+     default:
+          return NULL;
+     }
+}
 
+void DeleteTask(int Id){
+     int i;
+     int Index = TaskIndex(Id);
+     for (i = Index; i < RecordedTasks -1; i++)
+     {
+          MyTask[i] = MyTask[i+1];
+     }
+     RecordedTasks--;
 }
