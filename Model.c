@@ -109,7 +109,6 @@ int TaskStatus(int Id){
 }
 
 struct Task* SearchById(int Id){
-    int ID = Id;
     int Index = TaskIndex(Id);
 
     if (Index == NOT_FOUND){
