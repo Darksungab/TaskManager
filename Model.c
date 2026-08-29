@@ -29,6 +29,7 @@ int RegisterTask(char Title[], char Desc[]){
           MyTask[RecordedTasks].Id = NextId++;
           strcpy(MyTask[RecordedTasks].Title, Title);
           strcpy(MyTask[RecordedTasks].Desc, Desc);
+          RecordedTasks++;
 
           return SUCCESS;
      }
