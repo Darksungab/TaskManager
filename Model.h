@@ -26,7 +26,7 @@ int TaskExists(int Id);
 
 int ChangeTaskStatus(int Id, enum St NewStatus);
 
-void SearchTask(int Id, char Desc[101], char Title[51]);
+struct Task* SearchTask(int Id, char Desc[101], char Title[51], int Select);
 
 void DeleteTask(int Id);
 
