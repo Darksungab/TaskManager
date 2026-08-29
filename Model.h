@@ -30,6 +30,4 @@ void SearchTask(int Id, char Desc[101], char Title[51]);
 
 void DeleteTask(int Id);
 
-int CloseManager();
-
 #endif
