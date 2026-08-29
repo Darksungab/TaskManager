@@ -122,18 +122,33 @@ struct Task* SearchById(int Id){
 
 struct Task* SearchByDesc(char Desc[101]){
      int i;
-     int text;
+     int DescText;
      for (i = 0; i < RecordedTasks; i++)
      {
-          text = strcmp(Desc, MyTask[i].Desc);
-          if (text ==  0)
+          DescText = strcmp(Desc, MyTask[i].Desc);
+          if (DescText ==  0)
           {
                return &MyTask[i];
           }         
      }
      return NULL;
 }
-void SearchTask(int Id, char Desc[101], char Title[51]){
+
+struct Task* SearchByTitle(char Title[51]){
+     int i;
+     int TitleText;
+     for (i = 0; i < RecordedTasks; i++)
+     {
+          TitleText = strcmp(Title, MyTask[i].Title);
+          if (TitleText ==  0)
+          {
+               return &MyTask[i];
+          }         
+     }
+     return NULL;
+}
+
+struct Task* SearchTask(int Id, char Desc[101], char Title[51], int Select){
      
 switch (Select)
      {
