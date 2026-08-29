@@ -150,7 +150,7 @@ struct Task* SearchByTitle(char Title[51]){
 
 struct Task* SearchTask(int Id, char Desc[101], char Title[51], int Select){
      
-switch (Select)
+     switch (Select)
      {
      case 1:
           return SearchById(Id);
