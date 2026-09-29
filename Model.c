@@ -167,12 +167,17 @@ struct Task* SearchTask(int Id, char Desc[101], char Title[51], int Select){
      }
 }
 
-void DeleteTask(int Id){
+int DeleteTask(int Id){
      int i;
      int Index = TaskIndex(Id);
+     if (Index == NOT_FOUND)
+     {
+          return NOT_FOUND;
+     }     
      for (i = Index; i < RecordedTasks -1; i++)
      {
           MyTask[i] = MyTask[i+1];
      }
-     RecordedTasks--; 
+     RecordedTasks--;
+     return SUCCESS;
 }
