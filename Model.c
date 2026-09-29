@@ -155,7 +155,7 @@ struct Task* SearchTask(int Id, char Desc[101], char Title[51], int Select){
      {
      case 1:
           return SearchById(Id);
-     case 2:
+     case 2:{
           struct Task* ByDesc = SearchByDesc(Desc);
           if (ByDesc == NULL){
                return SearchByTitle(Title);
@@ -163,6 +163,7 @@ struct Task* SearchTask(int Id, char Desc[101], char Title[51], int Select){
           else{
                return ByDesc;
           }
+     }          
      default:
           return NULL;
      }
